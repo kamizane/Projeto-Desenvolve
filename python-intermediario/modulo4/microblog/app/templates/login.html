@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as forms %}
+
+{% block content %}
+    <h1>{{ _('Login') }}</h1>
+    {{ forms.quick_form(form) }}
+    
+    <p>{{ _('Don\'t have an account?') }} 
+        <a href="{{ url_for('auth.register') }}">{{ _('Register here!') }}</a>
+    </p>
+    
+    <p>
+        {{ _('Trouble logging in?') }}
+        <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Reset your password') }}</a>
+    </p>
+{% endblock %}
